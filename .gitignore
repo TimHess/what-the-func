@@ -286,3 +286,8 @@ __pycache__/
 *.btm.cs
 *.odx.cs
 *.xsd.cs
+
+# don't include full version of libs in our source
+**/lib/**/*.map
+**/lib/**/*.js
+!*.min.js

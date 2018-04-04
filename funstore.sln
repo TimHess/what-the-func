@@ -1,0 +1,55 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27428.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{6EC3EE1D-3C4E-46DD-8F32-0CC8E7565705}") = "funstore.web.store", "src\funstore.web.store\funstore.web.store.fsproj", "{EE787ACF-ED22-4947-83F9-4DCFB441AED3}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "funstore.shared.models", "src\funstore.shared.models\funstore.shared.models.csproj", "{6FD35D2E-2199-4D2A-B248-C8E186EB9A2A}"
+EndProject
+Project("{6EC3EE1D-3C4E-46DD-8F32-0CC8E7565705}") = "funstore.shared.logic", "src\funstore.shared.logic\funstore.shared.logic.fsproj", "{56BF58D7-95B1-43F0-B799-100119F5892E}"
+EndProject
+Project("{6EC3EE1D-3C4E-46DD-8F32-0CC8E7565705}") = "funstore.service.cart", "src\funstore.service.cart\funstore.service.cart.fsproj", "{AEE66A18-49B4-4487-A948-2936039F69EB}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "funstore.service.order", "src\funstore.service.order\funstore.service.order.csproj", "{979ECA53-320E-4B7A-A521-34F263B2E987}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "funstore.web.admin", "src\funstore.web.admin\funstore.web.admin.csproj", "{7C101262-4CA6-4FCA-A535-9650FB305BF9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EE787ACF-ED22-4947-83F9-4DCFB441AED3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EE787ACF-ED22-4947-83F9-4DCFB441AED3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EE787ACF-ED22-4947-83F9-4DCFB441AED3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EE787ACF-ED22-4947-83F9-4DCFB441AED3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6FD35D2E-2199-4D2A-B248-C8E186EB9A2A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6FD35D2E-2199-4D2A-B248-C8E186EB9A2A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6FD35D2E-2199-4D2A-B248-C8E186EB9A2A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6FD35D2E-2199-4D2A-B248-C8E186EB9A2A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{56BF58D7-95B1-43F0-B799-100119F5892E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{56BF58D7-95B1-43F0-B799-100119F5892E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{56BF58D7-95B1-43F0-B799-100119F5892E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{56BF58D7-95B1-43F0-B799-100119F5892E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AEE66A18-49B4-4487-A948-2936039F69EB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AEE66A18-49B4-4487-A948-2936039F69EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AEE66A18-49B4-4487-A948-2936039F69EB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AEE66A18-49B4-4487-A948-2936039F69EB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{979ECA53-320E-4B7A-A521-34F263B2E987}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{979ECA53-320E-4B7A-A521-34F263B2E987}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{979ECA53-320E-4B7A-A521-34F263B2E987}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{979ECA53-320E-4B7A-A521-34F263B2E987}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7C101262-4CA6-4FCA-A535-9650FB305BF9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7C101262-4CA6-4FCA-A535-9650FB305BF9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7C101262-4CA6-4FCA-A535-9650FB305BF9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7C101262-4CA6-4FCA-A535-9650FB305BF9}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6C2E0C10-5C6B-4B02-9ADB-D69FDBD07FD4}
+	EndGlobalSection
+EndGlobal
