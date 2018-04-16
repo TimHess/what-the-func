@@ -1,4 +1,4 @@
-﻿namespace funstore.service.cart.Controllers
+﻿namespace Funstore.Service.Cart.Controllers
 
 open Microsoft.AspNetCore.Mvc
 
@@ -24,7 +24,7 @@ type ValuesController () =
 
     // PUT api/values/5
     [<HttpPut("{id}")>]
-    member this.Put(id:int, [<FromBody>] value:string ) =
+    member this.Put(id:int, [<FromBody>] value:string) =
         ()
     
     // DELETE api/values/5

@@ -3,8 +3,10 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Pivotal.Discovery.Client;
+using Steeltoe.Management.CloudFoundry;
 
-namespace funstore.service.order
+namespace Funstore.Service.Order
 {
     public class Startup
     {
@@ -19,6 +21,8 @@ namespace funstore.service.order
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+            services.AddCloudFoundryActuators(Configuration);
+            services.AddDiscoveryClient(Configuration);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -28,13 +32,10 @@ namespace funstore.service.order
             {
                 app.UseDeveloperExceptionPage();
             }
-            else
-            {
-                app.UseHsts();
-            }
 
-            app.UseHttpsRedirection();
             app.UseMvc();
+            app.UseCloudFoundryActuators();
+            app.UseDiscoveryClient();
         }
     }
 }

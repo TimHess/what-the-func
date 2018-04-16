@@ -1,26 +1,35 @@
-﻿using funstore.shared.Models;
+﻿using Funstore.Shared.csharp;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
 using System.Diagnostics;
 
-namespace funstore.web.admin.Controllers
+namespace Funstore.Web.Admin.Controllers
 {
     public class HomeController : Controller
     {
+        private ILogger<HomeController> _logger;
+
+        public HomeController(ILogger<HomeController> logger)
+        {
+            _logger = logger;
+        }
         public IActionResult Index()
         {
+            _logger.LogTrace("Requested the Home page");
             return View();
         }
 
         public IActionResult Orders()
         {
-            ViewData["Message"] = "Your application description page.";
+            ViewData["Message"] = "View and Process Orders";
 
             return View();
         }
 
         public IActionResult Carts()
         {
-            ViewData["Message"] = "Your contact page.";
+            
+            ViewData["Message"] = "View Live Shopping Carts";
 
             return View();
         }

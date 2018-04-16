@@ -21,6 +21,10 @@
     width: 100%;
 }
 
+.cartbar {
+    color: #c1c1c1;
+}
+
 /* Hide/rearrange for smaller screens */
 @media screen and (max-width: 767px) {
     /* Hide captions */

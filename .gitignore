@@ -291,3 +291,4 @@ __pycache__/
 **/lib/**/*.map
 **/lib/**/*.js
 !*.min.js
+Thumbs.db

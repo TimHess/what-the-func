@@ -1,4 +1,4 @@
-namespace funstore.shared.Models
+namespace Funstore.Shared.csharp
 {
     public class ErrorViewModel
     {

@@ -5,11 +5,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Include="Library.fs" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <PackageReference Update="System.ValueTuple" Version="4.5.0-preview1-26216-02" />
+    <PackageReference Include="Steeltoe.Common.Http" Version="2.0.0" />
+    <PackageReference Include="System.ValueTuple" Version="4.5.0-preview2-26406-04" />
   </ItemGroup>
 
 </Project>

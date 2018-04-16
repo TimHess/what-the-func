@@ -1,7 +1,8 @@
 ﻿using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
+using Pivotal.Extensions.Configuration.ConfigServer;
 
-namespace funstore.service.order
+namespace Funstore.Service.Order
 {
     public class Program
     {
@@ -10,8 +11,16 @@ namespace funstore.service.order
             CreateWebHostBuilder(args).Build().Run();
         }
 
-        public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
-            WebHost.CreateDefaultBuilder(args)
-                .UseStartup<Startup>();
+        public static IWebHostBuilder CreateWebHostBuilder(string[] args)
+        {
+            return WebHost
+                    .CreateDefaultBuilder(args)
+                    .UseCloudFoundryHosting()
+                    .ConfigureAppConfiguration((builder, config) =>
+                    {
+                        config.AddConfigServer();
+                    })
+                    .UseStartup<Startup>();
+        }
     }
 }

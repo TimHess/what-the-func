@@ -5,9 +5,9 @@ VisualStudioVersion = 15.0.27428.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{6EC3EE1D-3C4E-46DD-8F32-0CC8E7565705}") = "funstore.web.store", "src\funstore.web.store\funstore.web.store.fsproj", "{EE787ACF-ED22-4947-83F9-4DCFB441AED3}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "funstore.shared.models", "src\funstore.shared.models\funstore.shared.models.csproj", "{6FD35D2E-2199-4D2A-B248-C8E186EB9A2A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "funstore.shared.csharp", "src\funstore.shared.csharp\funstore.shared.csharp.csproj", "{6FD35D2E-2199-4D2A-B248-C8E186EB9A2A}"
 EndProject
-Project("{6EC3EE1D-3C4E-46DD-8F32-0CC8E7565705}") = "funstore.shared.logic", "src\funstore.shared.logic\funstore.shared.logic.fsproj", "{56BF58D7-95B1-43F0-B799-100119F5892E}"
+Project("{6EC3EE1D-3C4E-46DD-8F32-0CC8E7565705}") = "funstore.shared.fsharp", "src\funstore.shared.fsharp\funstore.shared.fsharp.fsproj", "{56BF58D7-95B1-43F0-B799-100119F5892E}"
 EndProject
 Project("{6EC3EE1D-3C4E-46DD-8F32-0CC8E7565705}") = "funstore.service.cart", "src\funstore.service.cart\funstore.service.cart.fsproj", "{AEE66A18-49B4-4487-A948-2936039F69EB}"
 EndProject

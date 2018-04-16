@@ -1,0 +1,10 @@
+---
+applications:
+- name: funstore-store
+  buildpack: dotnet_core_buildpack
+  env:
+    ASPNETCORE_ENVIRONMENT: Production
+  services:
+    - myDiscoveryService
+    - myConfigServer
+    - myCircuitBreaker
