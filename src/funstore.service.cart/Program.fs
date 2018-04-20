@@ -6,6 +6,7 @@ open Microsoft.Extensions.Logging
 open Pivotal.Extensions.Configuration.ConfigServer
 open Steeltoe.Extensions.Logging
 open System
+open System.IO
 
 module Program =
     let exitCode = 0
@@ -14,10 +15,11 @@ module Program =
         (new WebHostBuilder())
             .UseKestrel()
             .UseCloudFoundryHosting()
+            .UseContentRoot(Directory.GetCurrentDirectory())
             .ConfigureAppConfiguration(Action<WebHostBuilderContext, IConfigurationBuilder>(fun _builder config ->
                 let env = _builder.HostingEnvironment
                 config.SetBasePath(env.ContentRootPath)
-                    .AddJsonFile("appsettings.json", true, true)
+                    .AddJsonFile("appsettings.json", false, true)
                     .AddJsonFile("appsettings.Development.json", true)
                     .AddEnvironmentVariables()
                     .AddConfigServer() |> ignore

@@ -1,6 +1,5 @@
 ﻿namespace Funstore.Web.Store
 
-open Microsoft.AspNetCore
 open Microsoft.AspNetCore.Hosting
 open Microsoft.Extensions.Configuration
 open Microsoft.Extensions.Logging
@@ -10,7 +9,6 @@ open System
 open System.IO
 
 module Program =
-
     let exitCode = 0
 
     let CreateWebHostBuilder args =

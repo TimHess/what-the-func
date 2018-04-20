@@ -40,5 +40,6 @@ type CartController () =
     // DELETE api/cart/5
     [<HttpDelete("{id}")>]
     member this.Delete(id:Guid) =
-        Carts.Remove(Carts.Find(fun i -> i.GetId() = id))
+        let c = Carts.Find(fun _i -> _i.GetId() = id)
+        c.Clear()
     

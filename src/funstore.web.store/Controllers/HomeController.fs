@@ -16,7 +16,7 @@ type HomeController (logger: ILogger<HomeController>, client: IDiscoveryClient, 
     member this.Index () =
         async {
             logger.LogTrace "Requested the Home page"
-            let! inventory = inventoryService.GetInventoryAsync()
+            let! inventory = Async.RunSynchronously (inventoryService.GetInventoryAsync())
             return this.View(inventory)
         }
 

@@ -31,7 +31,7 @@ namespace Funstore.Shared.csharp
 
             var request = new HttpRequestMessage(HttpMethod.Get, cartUrl);
             var result = await Invoke<List<CartItem>>(request);
-            return result;
+            return result ?? new List<CartItem>();
         }
 
         public async Task<bool> RemoveItemAsync(string cartId, int itemKey)

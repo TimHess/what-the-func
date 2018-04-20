@@ -6,6 +6,8 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Include="Controllers\OrderController.fs" />
+    <Compile Include="Controllers\CartController.fs" />
     <Compile Include="Views\CartViewComponent.fs" />
     <Compile Include="Controllers/HomeController.fs" />
     <Compile Include="Startup.fs" />
@@ -39,7 +41,13 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Content Update="Views\Home\Cart.cshtml">
+    <Content Update="Views\Cart\Index.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
+    <Content Update="Views\Order\View.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
+    <Content Update="Views\Order\Index.cshtml">
       <Pack>$(IncludeRazorContentInPack)</Pack>
     </Content>
     <Content Update="Views\Shared\_CartPartial.cshtml">

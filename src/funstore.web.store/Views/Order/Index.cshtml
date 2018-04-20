@@ -1,0 +1,29 @@
+﻿@model System.Collections.Generic.List<Order>
+    @{
+    ViewData["Title"] = "Order History";
+    }
+    <h2>@ViewData["Title"].</h2>
+    <h3>@ViewData["Message"]</h3>
+
+    <table class="table table-striped">
+        <thead>
+            <th>Order Id</th>
+            <th>Order Date</th>
+            <th>Status</th>
+            <th></th>
+        </thead>
+        <tbody>
+        @if(Model?.Count > 0) {
+            foreach(var i in Model){
+            <tr>
+                <td>@i.Id</td>
+                <td>@i.OrderPlaced</td>
+                <td>@i.Status</td>
+                <td class="text-center"><a asp-controller="order" asp-action="view" asp-route-id="@i.Id" class="btn btn-primary">view</a></td>
+            </tr>
+            }
+        } else {
+            <tr><td colspan="4">No orders yet, go have some fun!</td></tr>
+        }
+        </tbody>
+    </table>

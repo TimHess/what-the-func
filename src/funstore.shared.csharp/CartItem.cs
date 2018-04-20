@@ -13,5 +13,7 @@ namespace Funstore.Shared.csharp
         public int Count { get; set; } = 1;
 
         public DateTime DateCreated { get; set; }
+
+        public InventoryItem Item { get; set; }
     }
 }

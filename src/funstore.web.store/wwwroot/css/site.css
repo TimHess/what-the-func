@@ -24,6 +24,13 @@
 .cartbar {
     color: #c1c1c1;
 }
+.inventory {
+    padding: 10px;
+    height:300px;
+}
+.productImage {
+    font-size: 80pt;
+}
 
 /* Hide/rearrange for smaller screens */
 @media screen and (max-width: 767px) {

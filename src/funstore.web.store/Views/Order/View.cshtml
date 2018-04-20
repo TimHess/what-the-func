@@ -1,0 +1,29 @@
+﻿@model Order
+    @{
+    ViewData["Title"] = "View an Order";
+    }
+    <h2>@ViewData["Title"].</h2>
+    <h3>@TempData["Message"]</h3>
+
+    <table class="table table-striped">
+        <thead>
+            <th>Order Id</th>
+            <th>Order Items</th>
+            <th>Date Placed</th>
+            <th>Status</th>
+        </thead>
+        <tbody>
+            <tr>
+                <td>@Model.Id</td>
+                <td>
+                @if(Model?.Items?.Count > 0) {
+                    foreach(var i in Model.Items){
+                    <text>@i.Count x @i.Item?.Name<br /></text>
+                    }
+                }
+                </td>
+            <td>@Model.OrderPlaced</td>
+            <td>@Model.Status</td></tr>
+        </tbody>
+    </table>
+    <h5 class="text-right"><a asp-controller="order" asp-action="cancel" class="btn btn-danger">Cancel Order</a></h5>
