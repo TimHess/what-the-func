@@ -11,6 +11,12 @@ namespace Funstore.Service.Order.Controllers
     {
         private static List<Shared.csharp.Order> Orders = new List<Shared.csharp.Order>();
 
+        [HttpGet]
+        public IEnumerable<Shared.csharp.Order> Get()
+        {
+            return Orders;
+        }
+
         // GET api/values
         [HttpGet("history/{cartId}")]
         public IEnumerable<Shared.csharp.Order> History(Guid cartId)
@@ -29,21 +35,36 @@ namespace Funstore.Service.Order.Controllers
         [HttpPost]
         public ActionResult Post([FromBody] Shared.csharp.Order request)
         {
-            var newOrder = new Shared.csharp.Order { CartId = request.CartId, Items = request.Items, OrderPlaced = DateTime.Now, Id = Orders.Count + 1 };
+            var newOrder = new Shared.csharp.Order {
+                CartId = request.CartId,
+                Items = request.Items,
+                OrderPlaced = DateTime.Now,
+                Id = Orders.Count + 1,
+                Status = "Received"
+            };
             Orders.Add(newOrder);
             return Json(newOrder);
         }
 
         // PUT api/values/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
+        [HttpPut("{id}/{status}")]
+        public ActionResult Put(int id, string status)
         {
-        }
-
-        // DELETE api/values/5
-        [HttpDelete("{id}")]
-        public void Delete(int id)
-        {
+            var order = Orders.First(o => o.Id == id);
+            if (order == null)
+            {
+                return NotFound();
+            }
+            else if (order.Status != "Received")
+            {
+                return BadRequest();
+            }
+            else
+            {
+                order.Status = status;
+                order.LastUpdate = DateTime.Now;
+                return Ok(order);
+            }
         }
     }
 }

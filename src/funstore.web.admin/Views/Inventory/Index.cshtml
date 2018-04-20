@@ -1,0 +1,16 @@
+﻿@model List<InventoryItem>
+    @{
+        ViewData["Title"] = "Inventory Management";
+    }
+    <h2>@ViewData["Title"].</h2>
+<table class="table">
+    <thead>
+        <tr><th>Item Id</th><th>Name</th><th>Description</th><th>Font Awesome Icon</th></tr>
+    </thead>
+    <tbody>
+        @foreach(var i in Model)
+        {
+        <tr><td>@i.Id</td><td>@i.Name</td><td>@i.Description</td><td>@i.FontAwesomeIcon <i class="fa fa-@i.FontAwesomeIcon"></i></td></tr>
+        }
+    </tbody>
+</table>

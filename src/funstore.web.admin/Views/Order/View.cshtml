@@ -28,6 +28,6 @@
     </table>
     <h5 class="text-right">
     @if(Model.Status == "Received") {
-        <a asp-controller="order" asp-action="cancel" asp-route-id="@Model.Id" class="btn btn-danger">Cancel Order</a>
-    }
+        <a asp-controller="order" asp-action="update" asp-route-id="@Model.Id" asp-route-status="Processed" class="btn btn-primary">process</a>
+   }
     </h5>

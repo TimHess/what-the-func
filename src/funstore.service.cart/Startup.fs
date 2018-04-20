@@ -7,6 +7,7 @@ open Microsoft.Extensions.Configuration
 open Microsoft.Extensions.DependencyInjection
 open Steeltoe.Management.CloudFoundry
 open Pivotal.Discovery.Client
+open System
 
 type Startup private () =
     new (configuration: IConfiguration) as this =
@@ -18,6 +19,7 @@ type Startup private () =
         // Add framework services.
         services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1) |> ignore
         services.AddCloudFoundryActuators(this.Configuration) |> ignore
+        Console.WriteLine (this.Configuration.GetSection "eureka")
         services.AddDiscoveryClient(this.Configuration) |> ignore
 
     // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

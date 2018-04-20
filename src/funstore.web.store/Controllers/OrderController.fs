@@ -38,6 +38,12 @@ type OrderController (logger: ILogger<OrderController>, client: IDiscoveryClient
             return this.View(order)
         }
 
+    member this.Cancel(Id:int) =
+        async {
+            let! updated = orderService.CancelOrderAsync(Id) |> Async.AwaitTask
+            return RedirectResult("/order/view/" + Id.ToString())
+        }
+
     // list orders
     member this.Index () =
         let cartId = this.HttpContext.Session.GetString("FunstoreId")

@@ -1,10 +1,9 @@
 ﻿using Microsoft.Extensions.Logging;
+using Steeltoe.Common.Discovery;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using System.Net.Http;
-using Steeltoe.Common.Discovery;
+using System.Threading.Tasks;
 
 namespace Funstore.Shared.csharp
 {
@@ -40,5 +39,35 @@ namespace Funstore.Shared.csharp
             var result = await Invoke<List<Order>>(request);
             return result;
         }
+
+        public async Task<Order> CancelOrderAsync(int id)
+        {
+            var orderUrl = $"{ORDER_URL}/{id}/Cancelled" ;
+            var request = new HttpRequestMessage(HttpMethod.Put, orderUrl);
+            var result = await Invoke<Order>(request);
+            return result;
+        }
+
+        public async Task<List<Order>> GetAllOrders()
+        {
+            var request = new HttpRequestMessage(HttpMethod.Get, ORDER_URL);
+            var result = await Invoke<List<Order>>(request);
+            return result;
+        }
+
+        /// <summary>
+        /// This should be an admin-only function
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="status"></param>
+        /// <returns></returns>
+        public async Task<Order> UpdateOrderAsync(int id, string status)
+        {
+            var orderUrl = $"{ORDER_URL}/{id}/{status}";
+            var request = new HttpRequestMessage(HttpMethod.Put, orderUrl);
+            var result = await Invoke<Order>(request);
+            return result;
+        }
+
     }
 }

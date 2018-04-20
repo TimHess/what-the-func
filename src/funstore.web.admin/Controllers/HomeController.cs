@@ -19,21 +19,6 @@ namespace Funstore.Web.Admin.Controllers
             return View();
         }
 
-        public IActionResult Orders()
-        {
-            ViewData["Message"] = "View and Process Orders";
-
-            return View();
-        }
-
-        public IActionResult Carts()
-        {
-            
-            ViewData["Message"] = "View Live Shopping Carts";
-
-            return View();
-        }
-
         public IActionResult Error()
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
